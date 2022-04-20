@@ -1,0 +1,100 @@
+$primary-color: #0277bd;
+$secondary-color: #004c8c;
+.header {
+  background-color: $primary-color;
+  display: flex;
+//   z-index: 10;
+  height: 4em;
+  color: white;
+
+  .header-item {
+    margin: auto 0px;
+    text-decoration: none;
+    display: flex;
+    padding: 7px;
+  }
+  .logo-container {
+    display: flex;
+    img {
+      height: 42px;
+    }
+    .logo-text {
+      font-size: 1.75em;
+      font-weight: bold;
+    }
+  }
+  .user-container {
+    display: flex;
+    margin-left: auto;
+    margin-right: 2em;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0px;
+    a.signin {
+      border: solid 1px rgba(255, 255, 255, 0.486);
+      padding: 1px;
+    }
+    a.logout {
+    }
+    a.hidden {
+      display: none;
+    }
+  }
+}
+.sidebar span[class*="material-icons"],
+.burger span[class*="material-icons"] {
+  $padding-large: 0.875em;
+  padding: 14px;
+  font-size: 1.6em;
+  color: #ffffffc5;
+  font-weight: lighter;
+}
+.sidebar {
+  padding-top: 1em;
+  font-weight: 300;
+  background-color: $secondary-color;
+  // background-color: red;
+  //1.6+0.875*2 - padding + icon size
+  width: 3.35em;
+  height: 100%;
+  position: fixed;
+  transition: width 0.3s;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 70%);
+  z-index: -1;
+  overflow-x: hidden;
+  .container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+  div.bottom-menu {
+    //drop it to bottom
+    margin-top: auto;
+    //height of header
+    margin-bottom: 4em;
+  }
+  &.expanded {
+    width: 10em;
+    ul li:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  ul {
+    li {
+      width: 10em;
+      display: flex;
+      a{
+        display: flex;
+      }
+      div.menu-label {
+        color: white;
+        // width: 10em-3.35em;
+        //align middle vert
+        margin: auto 0;
+      }
+    }
+    li:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}

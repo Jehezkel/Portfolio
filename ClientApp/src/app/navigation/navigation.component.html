@@ -1,0 +1,67 @@
+<div class="header">
+  <div class="logo-container">
+    <span class="header-item burger">
+      <a
+        href="#"
+        (click)="isExpanded = isExpanded ? false : true"
+        class="sidemenu-show"
+      >
+        <span class="material-icons-outlined sidemenu-icon"> menu </span></a
+      >
+    </span>
+
+    <img
+      class="header-item"
+      src="../../../../assets/images/logo.svg"
+      alt="app-logo-icon"
+    />
+    <span class="header-item logo-text">{{ appTitle }}</span>
+  </div>
+  <div class="user-container">
+    <a href="#" onclick="toggleLogin()" class="header-item signin">
+      <span class="material-icons-outlined header-item"> account_circle </span>
+      <span class="header-item"> SIGN IN </span>
+    </a>
+    <a href="#" onclick="toggleLogin()" class="header-item logout hidden">
+      <span class="material-icons-outlined header-item"> account_circle </span>
+    </a>
+  </div>
+</div>
+<div class="sidebar" [ngClass]="isExpanded ? 'expanded' : ''">
+  <div class="container">
+    <div class="main-menu menu-container expanded">
+      <ul class="menu-list">
+        <li>
+          <a routerLink="">
+            <span class="material-icons-outlined"> home </span>
+            <div class="menu-label">Home</div>
+          </a>
+        </li>
+        <li>
+          <a routerLink="todo">
+            <span class="material-icons-outlined"> event </span>
+            <div class="menu-label">Calendar</div>
+          </a>
+        </li>
+        <li>
+          <a routerLink="todo">
+            <span class="material-icons-outlined"> view_kanban </span>
+            <div class="menu-label">Kanban view</div>
+          </a>
+        </li>
+        <li routerLink="">
+          <span class="material-icons-outlined"> checklist </span>
+          <div class="menu-label">Simple Todo</div>
+        </li>
+      </ul>
+    </div>
+    <div class="bottom-menu menu-container">
+      <ul class="menu-list">
+        <li>
+          <span class="material-icons-outlined"> settings </span>
+          <div class="menu-label">Settings</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
