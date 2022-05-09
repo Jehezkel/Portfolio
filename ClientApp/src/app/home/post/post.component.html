@@ -1,1 +1,8 @@
-<p>post works!</p>
+
+<div class="post-container">
+    <div class="header-row">
+        <div class="title-row">{{postObject.title}}</div>
+        <div class="created">{{postObject.author}}, {{postObject.createdDate | date: 'medium'}}</div>
+    </div>
+    <div class="content-container">{{postObject.content}}</div>
+</div>

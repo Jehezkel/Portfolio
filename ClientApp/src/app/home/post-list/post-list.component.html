@@ -1,2 +1,4 @@
 <div *ngIf="loading">Loading in progress</div>
-<div *ngIf="!loading">{{ postList | json }}</div>
+<div class="posts-container" *ngIf="!loading">
+    <app-post *ngFor="let post of postList" [postObject]="post"></app-post>
+</div>
